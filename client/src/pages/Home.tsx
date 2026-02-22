@@ -250,7 +250,7 @@ export default function Home() {
             <Truck className="w-4 h-4 text-[oklch(0.72_0.17_65)]" />
             <span>2026 NHVR Master Code of Practice — Online Course</span>
           </div>
-          <p>Based on the HVNL as at 1 December 2025. Penalties indexed to CPI 1 July 2025.</p>
+          <p className="text-white/60 text-right">Based on the HVNL as at December 2025 — Penalties indexed to CPI 1 July 2025.<br />Refer: <em>Heavy Vehicle (Mass, Dimension and Loading) National Amendment Regulation 2025</em>, NHVR Master Code 2026</p>
         </div>
       </footer>
     </div>
