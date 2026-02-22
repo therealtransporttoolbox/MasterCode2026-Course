@@ -1,39 +1,39 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { CourseProvider } from "./contexts/CourseContext";
 import Home from "./pages/Home";
-
+import CoursePage from "./pages/CoursePage";
+import LessonPage from "./pages/LessonPage";
+import QuizPage from "./pages/QuizPage";
+import FinalAssessmentPage from "./pages/FinalAssessmentPage";
+import NotFound from "./pages/NotFound";
 
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
+      <Route path="/" component={Home} />
+      <Route path="/course" component={CoursePage} />
+      <Route path="/course/module/:moduleId/lesson/:lessonId" component={LessonPage} />
+      <Route path="/course/module/:moduleId/quiz" component={QuizPage} />
+      <Route path="/course/final-assessment" component={FinalAssessmentPage} />
       <Route component={NotFound} />
     </Switch>
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
+      <ThemeProvider defaultTheme="light">
+        <CourseProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Router />
+          </TooltipProvider>
+        </CourseProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );
