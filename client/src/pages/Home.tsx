@@ -4,6 +4,7 @@ import { useLocation } from "wouter";
 import { BookOpen, Award, Clock, Users, ChevronRight, CheckCircle, Shield, Truck } from "lucide-react";
 import { courseModules } from "@/data/courseData";
 import { useCourse } from "@/contexts/CourseContext";
+import CommunityModal from "@/components/CommunityModal";
 
 const HERO_URL =
   "https://private-us-east-1.manuscdn.com/sessionFile/hGzbcCWHHJkpSz9zf3yFuB/sandbox/7OhuWhyFobxzaJ9vYf1ugV-img-1_1771737829000_na1fn_bmh2ci1oZXJvLWJhbm5lcg.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvaEd6YmNDV0hISmtwU3o5emYzeUZ1Qi9zYW5kYm94LzdPaHVXaHlGb2J4emFKOXZZZjF1Z1YtaW1nLTFfMTc3MTczNzgyOTAwMF9uYTFmbl9ibWgyY2kxb1pYSnZMV0poYm01bGNnLmpwZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=Dh9AtxLciiyGDwm0uYAlZrBkszNNiqR6MXgHmAzJ1Ib1Jti4Dvy46MHUF7k5pByJNK7B8gyB3oHxzcNOw1O7ZJcxaj3jD0iqX1jEwgHbjHmRHlnfn8qnQdXY7kGvg9RE8rWOL-uovq0xRMPa98ux7CpWLPlrsUtpsPsb8HAnSNHsXv~Xl8PsZL-kJLaSW52gzCHSNV7GrdlnEe-bP0t1jkUl3JH9uGalDR9u4vQ3Lun6kMgAeHjEVdBLS54jmrZLwAQ0KK~VWPYRwrtt0QDUQO26tHu5TMrEEGUsZNV-N4GbLozE4KVQ6sFBs9bT7NGnmzGkUhjU0RBCZ5j87fxAOg__";
@@ -22,6 +23,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
+      <CommunityModal />
       {/* Top nav */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-border shadow-sm">
         <div className="container flex items-center justify-between h-14">
