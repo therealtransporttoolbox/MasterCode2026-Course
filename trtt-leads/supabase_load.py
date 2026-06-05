@@ -36,7 +36,7 @@ TABLE = "trtt_leads"
 UPSERT_ON_CONFLICT = "abn"  # unique column — duplicate ABNs are updated, not inserted
 
 # Columns that map directly from CSV → table
-CSV_COLUMNS = ["abn", "entity_name", "entity_type", "abn_status", "state", "postcode", "source"]
+CSV_COLUMNS = ["abn", "entity_name", "entity_type", "abn_status", "state", "postcode", "segment", "source"]
 
 
 def read_csv(path: str) -> list[dict[str, Any]]:
