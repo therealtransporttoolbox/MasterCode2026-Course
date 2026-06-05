@@ -1,0 +1,7 @@
+.env
+*.sqlite
+*.sqlite3
+*.zip
+*.xml
+road_freight.csv
+staging.csv
